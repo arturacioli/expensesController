@@ -1,0 +1,9 @@
+
+<section>
+    <app-expenses-list (openNew)="onAddExpense()"></app-expenses-list>
+    <app-expenses-info></app-expenses-info>
+    @if(isAddingExpense){
+        <app-new-expense (close)="onCloseAdd()"></app-new-expense>
+    }
+    
+</section>

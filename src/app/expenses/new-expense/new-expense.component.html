@@ -1,0 +1,47 @@
+<div class="backDrop" (click)="onClose()"></div>
+<dialog open="true">
+  <form (ngSubmit)="onSubmit(form)" #form>
+    <h2>Add Expense</h2>
+    <div class="input-group">
+      
+      <p>
+        <label for="value">Value</label>
+        <input id="value" required name="value" type="number" [(ngModel)]="enteredValue" />
+      </p>
+  
+      <p>
+        <label for="type">Type</label>
+        <select
+          id="type"
+          name="type"
+          required
+          [(ngModel)]="enteredExpenseType"
+        >
+        @for (item of expenseTypeList; track $index) {
+          <option [value]="item">{{item}}</option>
+        }
+      </select>
+      </p>
+    </div>
+    
+    <p>
+      <label for="reason">Reason</label>
+      <textarea
+        id="reason"
+        required
+        name="reason"
+        [(ngModel)]="enteredExpenseReason"
+      ></textarea>
+    </p>
+
+    <p>
+      <label for="date">Date</label>
+      <input id="date" name="date" required type="date" [(ngModel)]="enteredDate" />
+    </p>
+
+    <p class="actions">
+      <button type="submit">Save</button>
+      <button (click)="onClose()">Close</button>
+    </p>
+  </form>
+</dialog>

@@ -1,0 +1,57 @@
+header{
+    display: flex;
+    font-size: 1.25rem;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    padding: 1.5rem 10%;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+header .logo{
+    width: 5.5rem;
+    height: 5.5rem;
+    border: 0 solid;
+    border-radius: 100%;
+    padding: 0;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+header .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+ul li a:hover{
+   
+    color: #09550d;
+}
+#logoutButton{
+    display: inline-block;
+    padding: 0.65rem 1.35rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: #0d7912;
+    color: white;
+    border: none;
+}
+
+#logoutButton:hover{
+    background-color: #09550d;
+}

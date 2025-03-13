@@ -1,0 +1,29 @@
+<section>   
+    <table>
+        <thead>
+            <th>Value</th>
+            <th>Type</th>
+            <th>Reason</th>
+            <th>Date</th>
+            <th>
+                <button #cardbutton (click)="onAddClick()">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </th>
+        </thead>
+        <tbody>
+            @for (item of expensesList; track $index) {
+            <tr>
+                <td>{{item.value | currency:'BRL'}}</td>
+                <td>{{item.type}}</td>
+                <td>{{item.reason}}</td>
+                <td>{{item.date}}</td>
+                <td (click)="onDelete(item.id)">
+                    <mat-icon>delete</mat-icon>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+</section>
