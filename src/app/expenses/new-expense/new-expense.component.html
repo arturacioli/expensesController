@@ -1,12 +1,12 @@
 <div class="backDrop" (click)="onClose()"></div>
 <dialog open="true">
-  <form (ngSubmit)="onSubmit(form)" #form>
+  <form [formGroup]="expenseForm" #form>
     <h2>Add Expense</h2>
     <div class="input-group">
       
       <p>
         <label for="value">Value</label>
-        <input id="value" required name="value" type="number" [(ngModel)]="enteredValue" />
+        <input id="value" required name="value" type="number" formControlName="value" />
       </p>
   
       <p>
@@ -15,7 +15,7 @@
           id="type"
           name="type"
           required
-          [(ngModel)]="enteredExpenseType"
+          formControlName="type"
         >
         @for (item of expenseTypeList; track $index) {
           <option [value]="item">{{item}}</option>
@@ -30,17 +30,17 @@
         id="reason"
         required
         name="reason"
-        [(ngModel)]="enteredExpenseReason"
+        formControlName="reason"
       ></textarea>
     </p>
 
     <p>
       <label for="date">Date</label>
-      <input id="date" name="date" required type="date" [(ngModel)]="enteredDate" />
+      <input id="date" name="date" required type="date" formControlName="date" />
     </p>
 
     <p class="actions">
-      <button type="submit">Save</button>
+      <button class="submit" (click)="onSubmit()">Save</button>
       <button (click)="onClose()">Close</button>
     </p>
   </form>
